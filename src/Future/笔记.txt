@@ -1,0 +1,16 @@
+1.supplyAsync
+2.thenApply
+3.whenComplete
+4.handle                可以有一个入参作为异常的处理
+5.thenRun               在执行之后继续run，里面接受一个runnable参数
+6.thenAccept
+7.thenCompose           你产生的结果，再由另外一个CompletableFuture组合在一起
+8.thenCombine
+9.thenAcceptBoth
+
+10.runAfterBoth         两个都CompletableFuture结束之后，执行
+11.applyToEither        当你其中的一个执行外，就传递给其中的一个functional interface，谁快就执行谁
+12.acceptEither         类似于applyToEither,只是后面会交给一个consumer,然后会更新,不会有返回值
+13.runAfterEither       计算结果不会被消费，可以做一个通知的效果，没有入参（和上一个相比较）
+14.anyOf                有一个结束了就执行，剩下的不管了
+15.allOf                所有的都结束了再执行

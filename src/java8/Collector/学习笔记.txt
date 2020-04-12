@@ -1,0 +1,19 @@
+
+ * @param <T> the type of input elements to the reduction operation
+ * @param <A> the mutable accumulation type of the reduction operation (often
+ *            hidden as an implementation detail)
+ * @param <R> the result type of the reduction operation
+
+public interface Collector<T, A, R> {
+
+    T就是stream中元素的类型，
+    A是一个累加器，累加器的类型，
+    R是最终返回值的类型
+
+    Supplier<A> supplier();
+    BiConsumer<A, T> accumulator();
+    BinaryOperator<A> combiner();
+    Function<A, R> finisher();
+    Set<Characteristics> characteristics();
+}
+
