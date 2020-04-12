@@ -1,4 +1,4 @@
-package Future;
+package java8.Future;
 
 import java.util.Arrays;
 import java.util.List;

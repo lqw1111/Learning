@@ -1,4 +1,4 @@
-package Future;
+package java8.Future;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;

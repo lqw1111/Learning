@@ -1,10 +1,7 @@
-package Future;
+package java8.Future;
 
-import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class CompletableFutureInAction2 {
 
