@@ -24,7 +24,29 @@ class Solution5 {
         return max;
     }
 
-    public static void main(String[] args) {
+    public static String stringShift(String s, int[][] shift) {
+        if(s == null || s.length() == 0) return s;
+        for(int[] sh : shift){
+            int dir = sh[0];
+            int amount = sh[1];
+            String temp = s;
+            if(dir == 0){
+                //left
+                String left = temp.substring(0, amount);
+                String right = temp.substring(amount , temp.length());
+                temp = right + left;
+            }else{
+                //right
+                String left = temp.substring(0, temp.length() - amount);
+                String right = temp.substring(temp.length() - amount, temp.length());
+                temp = right + left;
+            }
+            s = temp;
+        }
+        return s;
+    }
 
+    public static void main(String[] args) {
+        stringShift("abc",new int[][] {{0,1},{1,2}});
     }
 }
