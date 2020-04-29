@@ -3,6 +3,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class child {
 
@@ -43,29 +44,14 @@ public class child {
         this.age = age;
     }
 
-//    public child generateChild(father fa, child c) throws IllegalAccessException, NoSuchFieldException {
-//        Field[] fields = fa.getClass().getDeclaredFields();
-//
-//        for(Field f:fields){
-//            String field = f.toString().substring(f.toString().lastIndexOf(".")+1);
-//            f.setAccessible(true);
-//            System.out.println("fa."+field+" --> "+f.get(fa));
-//
-//            Field cf = c.getClass().getDeclaredField(field);
-//
-//            cf.setAccessible(true);
-//
-//            cf.set(c, f.get(fa));
-//        }
-//
-//        return c;
-//    }
-
-
-    public static void main(String[] args) throws IllegalAccessException, NoSuchFieldException {
-        thread t = new thread();
-
-
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        child child = (child) o;
+        return Objects.equals(name, child.name) &&
+                Objects.equals(age, child.age) &&
+                Objects.equals(sport, child.sport);
     }
+
 }

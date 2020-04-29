@@ -3,6 +3,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 class SingleTon {
     private static SingleTon singleTon = new SingleTon();
@@ -39,6 +42,9 @@ public class Test1 {
     }
 
     public static void main(String[] args) {
+        AtomicInteger integer = new AtomicInteger();
+        integer.incrementAndGet();
+        Lock lock = new ReentrantLock();
         fizzBuzz(1);
     }
 }
