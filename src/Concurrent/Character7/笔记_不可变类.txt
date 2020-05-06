@@ -1,0 +1,18 @@
+七、不可变类
+
+不可变类的设计
+String为例
+final 不可继承，变量不可更改
+
+保护性拷贝
+因为在string中的其他方法，都使用了Arrays.copy
+比如substring方法就是创建了一个新的String对象
+
+享元模式(Flyweight pattern)
+当需要重用数量有限的同一类对象时
+A flyweight is an object that minimizes memory usage by sharing as much data as possible with other similar objects
+
+Byte, Short, Long缓存的范围都是-128 ~ 127
+Character缓存的范围是0 ~ 127
+Integer的默认范围 -128 ~ 127,最小值不能变，但最大值可以通过调整虚拟机参数 -Djava.lang.Integer.IntegerCache.high来改变
+Boolean缓存了TRUE和FALSE
