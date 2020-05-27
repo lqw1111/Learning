@@ -1,9 +1,6 @@
 package java8.Future;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class FutureInAction2 {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -16,6 +13,9 @@ public class FutureInAction2 {
                 return "error";
             }
         });
+
+        FutureTask futureTask = new FutureTask(() -> {return 1;});
+
 
         String value = future.get();
         System.out.println(value);

@@ -2,6 +2,8 @@ package Concurrent.DesignPatter;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.FutureTask;
 
 public class TwoPhaseTerminate {
 
